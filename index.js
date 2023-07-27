@@ -35,8 +35,6 @@ const argv = require("yargs/yargs")(process.argv.slice(2)).options(
 ).argv;
 
 function invokeAction({ action, id, name, email, phone }) {
-  console.log("action: ", action);
-
   switch (action) {
     case "list":
       listContacts();

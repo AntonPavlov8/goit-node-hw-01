@@ -20,6 +20,7 @@ async function removeContact(contactId) {
   const newData = allContacts.filter((contact) => {
     return contact.id !== contactId;
   });
+  console.log(`Contact with id ${contactId} was deleted`);
   fs.writeFile(contactsPath, JSON.stringify(newData));
 }
 
@@ -34,5 +35,6 @@ async function addContact(name, email, phone) {
   };
   allContacts.push(newContact);
   fs.writeFile(contactsPath, JSON.stringify(allContacts, null, 2));
+  console.log(`Contact with name ${name} was added`);
 }
 module.exports = { listContacts, getContactById, removeContact, addContact };
